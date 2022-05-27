@@ -1,0 +1,89 @@
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+svg {
+  display: block;
+  background: none;
+  width: 400px;
+  height: 400px;
+  margin: 60px auto;
+}
+
+#pupil,
+#stomach {
+  animation: moving 3s ease-out infinite;
+}
+
+#z1 {
+  transform: unset;
+  animation: moveZ 3s 0.5s ease-in-out alternate-reverse infinite;
+}
+
+#z2 {
+  transform: unset;
+  animation: moveZ 3s 1s ease-in-out alternate-reverse infinite;
+}
+
+#z3 {
+  transform: unset;
+  animation: moveZ 3s 2s ease-in-out alternate-reverse infinite;
+}
+
+#drop {
+  opacity: 1;
+  transform-origin: center center;
+  transform-box: fill-box;
+  transform: scale(0.5) rotate(-5deg) translate(2.5rem, -2rem);
+  animation: drip 2s ease-out alternate-reverse infinite;
+}
+
+.white {
+  opacity: 1;
+  transform-origin: center center;
+  transform-box: fill-box;
+  transform: scale(0.6);
+  animation: burbuja 2s ease-out alternate infinite;
+  z-index: 2;
+}
+
+.bubble {
+  opacity: 1;
+  transform-origin: center center;
+  transform-box: fill-box;
+  transform: scale(0.6);
+  animation: burbuja 2s ease-out alternate infinite;
+  z-index: 1;
+}
+
+@keyframes moving {
+  25%,
+  75% {
+    transform: translateY(-0.25rem);
+  }
+  50% {
+    transform: translateY(0.25rem);
+  }
+}
+
+@keyframes moveZ {
+  0% {
+    opacity: 0;
+    transform: translate(-5%, 4%);
+  }
+}
+
+@keyframes drip {
+  100% {
+    opacity: 0.5;
+    transform: scale(0.8) translate(0.75rem, -0.2rem);
+  }
+}
+
+@keyframes burbuja {
+  100% {
+    transform: scale(1);
+  }
+}
