@@ -4,7 +4,7 @@
   box-sizing: border-box;
 }
 
-.ilustration {
+svg {
   display: block;
   background: none;
   width: 400px;
@@ -13,20 +13,19 @@
   animation: fly-owl 3s linear infinite reverse;
 }
 
-svg #eyebrows-left,
-svg #eyebrows-right {
-  transform-origin: center center;
-  transform-box: fill-box;
-  transform: unset;
-  animation: moving 4s alternate infinite;
-}
-
 svg #flicker {
   transform-origin: center center;
   transform-box: fill-box;
   transform: unset;
   animation: blink-eye 4s infinite;
 }
+
+/* svg #casco {
+  transform-origin: center center;
+  transform-box: fill-box;
+  transform: unset;
+  animation: helmet 4s infinite;
+} */
 
 @keyframes fly-owl {
   0%,
@@ -38,25 +37,25 @@ svg #flicker {
   }
 }
 
-@keyframes moving {
-  25%,
-  75% {
-    transform: translateY(-0.1rem);
-  }
-  50% {
-    transform: translateY(0.1rem);
-  }
-}
-
 @keyframes blink-eye {
   0%,
   90%,
   95%,
   100% {
-    clip-path: ellipse(87% 63% at 48% -41%);
+    clip-path: ellipse(0 0 at 48% -41%);
   }
   92.5%,
   97.5% {
     clip-path: ellipse(70% 70% at 43% 39%);
   }
 }
+
+@keyframes helmet {
+    0%,
+    100% {
+      transform: translateY(1rem);
+    }
+    50% {
+      transform: translateY(0rem);
+    }
+  }

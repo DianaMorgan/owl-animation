@@ -4,28 +4,30 @@
   box-sizing: border-box;
 }
 
-.ilustration {
+svg {
   display: block;
   background: none;
   width: 400px;
   height: 400px;
   margin: 60px auto;
-  animation: fly-owl 3s linear infinite reverse;
+  animation: fly-owl 4s linear infinite reverse;
 }
 
-svg #eyebrows-left,
-svg #eyebrows-right {
+#iris-left,
+#iris-right,
+#iris-left path,
+#iris-right path {
   transform-origin: center center;
   transform-box: fill-box;
   transform: unset;
-  animation: moving 4s alternate infinite;
+  animation: move-eyes 1s ease-out infinite alternate;
 }
 
-svg #flicker {
+#right-wing {
   transform-origin: center center;
   transform-box: fill-box;
   transform: unset;
-  animation: blink-eye 4s infinite;
+  animation: moving 1s ease-out infinite alternate;
 }
 
 @keyframes fly-owl {
@@ -38,25 +40,18 @@ svg #flicker {
   }
 }
 
-@keyframes moving {
-  25%,
-  75% {
-    transform: translateY(-0.1rem);
-  }
-  50% {
-    transform: translateY(0.1rem);
+@keyframes move-eyes {
+  0% {
+    transform: translate(-0.5rem, 0.5rem);
   }
 }
 
-@keyframes blink-eye {
-  0%,
-  90%,
-  95%,
-  100% {
-    clip-path: ellipse(87% 63% at 48% -41%);
+@keyframes moving {
+  25%,
+  75% {
+    transform: translateY(1rem);
   }
-  92.5%,
-  97.5% {
-    clip-path: ellipse(70% 70% at 43% 39%);
+  50% {
+    transform: translateY(0.1rem);
   }
 }
